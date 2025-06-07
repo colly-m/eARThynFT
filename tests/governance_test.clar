@@ -1,0 +1,11 @@
+(impl-trait 'traits/governance-interface.clar)
+
+(define-public (test-proposal-lifecycle)
+  (let ((desc "Reduce carbon emissions"))
+    (let ((proposal-id (contract-call? .governance propose desc)))
+      (asserts! (is-ok proposal-id) "Proposal creation should succeed")
+      (let ((vote-result (contract-call? .governance vote (unwrap! proposal-id u0) 5)))
+        (asserts! (is-ok vote-result) "Voting should succeed")
+        (let ((proposal (contract-call? .governance get-proposal (unwrap! proposal-id u0))))
+          (asserts! (is-ok proposal) "Proposal should exist")
+          (asserts! (> (get votes (unwrap! proposal)) 0) "Votes should be greater than 0"))))))

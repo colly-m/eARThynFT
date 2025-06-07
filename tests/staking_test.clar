@@ -1,0 +1,8 @@
+(define-public (test-stake-unstake-flow)
+  (let ((user tx-sender))
+    (let ((mint-result (contract-call? .nft-collection mint user)))
+      (let ((token-id (unwrap! mint-result u0)))
+        (let ((stake-result (contract-call? .staking stake token-id)))
+          (asserts! (is-ok stake-result) "Staking should succeed"))
+        (let ((unstake-result (contract-call? .staking unstake token-id)))
+          (asserts! (is-ok unstake-result) "Unstaking should succeed"))))))

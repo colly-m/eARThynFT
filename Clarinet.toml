@@ -1,0 +1,88 @@
+[project]
+name = 'eARThyFTs'
+description = ''
+authors = []
+telemetry = true
+cache_dir = '.\.cache'
+
+[[project.requirements]]
+contract_id = 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard'
+[contracts.gip-token]
+path = 'contracts/gip-token.clar'
+clarity_version = 3
+epoch = 3.1
+
+[contracts.governance]
+path = 'contracts/governance.clar'
+clarity_version = 3
+epoch = 3.1
+
+[contracts.impact-tracker]
+path = 'contracts/impact-tracker.clar'
+clarity_version = 3
+epoch = 3.1
+
+[contracts.nft-collection]
+path = 'contracts/nft-collection.clar'
+clarity_version = 3
+epoch = 3.1
+
+[contracts.staking]
+path = 'contracts/staking.clar'
+clarity_version = 3
+epoch = 3.1
+
+[contracts.whitelist]
+path = 'contracts/whitelist.clar'
+clarity_version = 3
+epoch = 3.1
+
+# Traits
+[contracts.nft-interface]
+path = "traits/nft-interface.clar"
+clarity_version = 3
+epoch = 3.1
+
+[contracts.ft-interface]
+path = "traits/ft-interface.clar"
+clarity_version = 3
+epoch = 3.1
+
+[contracts.governance-interface]
+path = "traits/governance-interface.clar"
+clarity_version = 3
+epoch = 3.1
+
+[contracts.whitelist-interface]
+path = "traits/whitelist-interface.clar"
+clarity_version = 3
+epoch = 3.1
+
+# Utility Contracts
+[contracts.math-utils]
+path = "utils/math-utils.clar"
+clarity_version = 3
+epoch = 3.1
+
+[contracts.time-utils]
+path = "utils/time-utils.clar"
+clarity_version = 3
+epoch = 3.1
+
+[contracts.address-utils]
+path = "utils/address-utils.clar"
+clarity_version = 3
+epoch = 3.1
+
+[repl.analysis]
+passes = ['check_checker']
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
+
+[repl.remote_data]
+enabled = false
+api_url = 'https://api.hiro.so'

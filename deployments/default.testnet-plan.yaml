@@ -1,0 +1,57 @@
+---
+id: 0
+name: Testnet deployment
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoind.testnet.stacks.co:18332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - requirement-publish:
+            contract-id: SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard
+            remap-sender: ST1H9WWJ42VWXN2NKADWRCRVP0PKQ31670GW21H7S
+            remap-principals:
+              SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE: ST1H9WWJ42VWXN2NKADWRCRVP0PKQ31670GW21H7S
+            cost: 8400
+            path: ".\\.cache\\requirements\\SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard.clar"
+            clarity-version: 1
+      epoch: "2.0"
+    - id: 1
+      transactions:
+        - contract-publish:
+            contract-name: gip-token
+            expected-sender: ST1H9WWJ42VWXN2NKADWRCRVP0PKQ31670GW21H7S
+            cost: 2660
+            path: "contracts\\gip-token.clar"
+            anchor-block-only: true
+            clarity-version: 3
+        - contract-publish:
+            contract-name: governance
+            expected-sender: ST1H9WWJ42VWXN2NKADWRCRVP0PKQ31670GW21H7S
+            cost: 4170
+            path: "contracts\\governance.clar"
+            anchor-block-only: true
+            clarity-version: 3
+        - contract-publish:
+            contract-name: impact-tracker
+            expected-sender: ST1H9WWJ42VWXN2NKADWRCRVP0PKQ31670GW21H7S
+            cost: 5180
+            path: "contracts\\impact-tracker.clar"
+            anchor-block-only: true
+            clarity-version: 3
+        - contract-publish:
+            contract-name: nft-collection
+            expected-sender: ST1H9WWJ42VWXN2NKADWRCRVP0PKQ31670GW21H7S
+            cost: 5380
+            path: "contracts\\nft-collection.clar"
+            anchor-block-only: true
+            clarity-version: 3
+        - contract-publish:
+            contract-name: staking
+            expected-sender: ST1H9WWJ42VWXN2NKADWRCRVP0PKQ31670GW21H7S
+            cost: 4910
+            path: "contracts\\staking.clar"
+            anchor-block-only: true
+            clarity-version: 3
+      epoch: "3.1"
