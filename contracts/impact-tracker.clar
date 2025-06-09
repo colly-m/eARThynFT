@@ -1,5 +1,5 @@
 (impl-trait 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip009-trait) ;; If tracking per NFT
-(use .math-utils)
+(use-trait math-utils-trait .math-utils.math-utils-trait)
 
 ;; Error constants
 (define-constant ERR_NOT_OWNER u100)
